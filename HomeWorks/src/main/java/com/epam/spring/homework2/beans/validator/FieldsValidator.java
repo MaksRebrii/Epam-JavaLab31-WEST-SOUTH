@@ -1,6 +1,6 @@
 package com.epam.spring.homework2.beans.validator;
 
-public class FieldsValidator {
+public final class FieldsValidator {
 
     private FieldsValidator() {
     }

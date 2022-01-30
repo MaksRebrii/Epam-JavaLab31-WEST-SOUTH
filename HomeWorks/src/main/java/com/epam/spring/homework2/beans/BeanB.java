@@ -2,18 +2,16 @@ package com.epam.spring.homework2.beans;
 
 import com.epam.spring.homework2.beans.validator.FieldsValidator;
 import com.epam.spring.homework2.beans.validator.MyValidator;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class BeanB implements MyValidator {
 
-    @Value("${beanB.name}")
-    private String name;
+    private final String name;
+    private final int value;
 
-    @Value("${beanB.value}")
-    private int value;
-
+    public BeanB(String name, int value) {
+        this.name = name;
+        this.value = value;
+    }
 
     private void initMethod() {
         System.out.println(BeanB.class.getSimpleName() + ": initMethod started");
