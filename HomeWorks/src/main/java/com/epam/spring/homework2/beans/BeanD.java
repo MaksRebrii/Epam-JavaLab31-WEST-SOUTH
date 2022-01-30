@@ -1,7 +1,7 @@
 package com.epam.spring.homework2.beans;
 
-import com.epam.spring.homework2.beans.validator.FieldsValidator;
 import com.epam.spring.homework2.beans.validator.MyValidator;
+import com.epam.spring.homework2.beans.validator.Visitor;
 
 public class BeanD implements MyValidator {
 
@@ -22,9 +22,16 @@ public class BeanD implements MyValidator {
     }
 
     @Override
-    public void validate() {
-        System.out.println(this.getClass().getSimpleName() + ". validate method started");
-        FieldsValidator.validate(this.getClass().getSimpleName(), this.name, this.value);
+    public void validate(Visitor visitor) {
+        visitor.visitBeanD(this);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     @Override
