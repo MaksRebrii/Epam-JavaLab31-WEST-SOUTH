@@ -1,5 +1,6 @@
-package com.epam.spring.homework3.repository.entity;
+package com.epam.spring.homework3.persistence.dto;
 
+import com.epam.spring.homework3.persistence.entity.Role;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,9 +8,7 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-public class User {
-
-    private int id;
+public class UserDTO {
 
     private Role role;
 
@@ -18,8 +17,6 @@ public class User {
     private String surname;
 
     private String email;
-
-    private String password;
 
     private BigDecimal account;
 }
