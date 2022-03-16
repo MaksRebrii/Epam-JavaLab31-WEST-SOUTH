@@ -6,6 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
 public interface ApplicationMapper {
@@ -17,4 +18,6 @@ public interface ApplicationMapper {
     Application mapApplicationDTOToApplication(ApplicationDTO appointmentDto);
 
     List<ApplicationDTO> mapApplicationsToApplicationsDTO(List<Application> appointments);
+
+    Set<ApplicationDTO> mapApplicationsToApplicationsDTO(Set<Application> applications);
 }
