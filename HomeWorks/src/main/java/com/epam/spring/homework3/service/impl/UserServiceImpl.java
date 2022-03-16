@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUser(String email) {
         log.info(this.getClass().getSimpleName() + " getUser method");
-        User user = userRepository.getUser(email);
+        User user = userRepository.getUserByEmail(email);
         return UserMapper.INSTANCE.mapUserToUserDTO(user);
     }
 

@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface UserRepository {
 
-    User getUser(String email);
+    User getUserByEmail(String email);
+
+    User getUserById(int id);
 
     List<User> listUsers();
 

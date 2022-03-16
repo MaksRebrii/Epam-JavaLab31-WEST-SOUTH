@@ -1,4 +1,4 @@
-package com.epam.spring.homework3.repository.entity;
+package com.epam.spring.homework3.persistence.entity;
 
 import lombok.Builder;
 import lombok.Data;

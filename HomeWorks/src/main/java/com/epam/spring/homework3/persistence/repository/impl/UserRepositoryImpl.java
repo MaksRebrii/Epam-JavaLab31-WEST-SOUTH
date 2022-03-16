@@ -15,11 +15,20 @@ public class UserRepositoryImpl implements UserRepository {
     private final List<User> userList = new ArrayList<>();
 
     @Override
-    public User getUser(String email) {
+    public User getUserByEmail(String email) {
         log.info(this.getClass().getSimpleName() + "get user with email {}", email);
         return userList.stream()
                 .filter(user -> user.getEmail()
                         .equals(email)).findFirst()
+                .orElseThrow(() -> new RuntimeException("User in not found"));
+    }
+
+    @Override
+    public User getUserById(int id) {
+        log.info(this.getClass().getSimpleName() + "get user by id  {}", id);
+        return userList.stream()
+                .filter(user -> user.getId() == (id))
+                .findFirst()
                 .orElseThrow(() -> new RuntimeException("User in not found"));
     }
 
